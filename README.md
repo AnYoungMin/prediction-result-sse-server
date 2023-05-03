@@ -66,7 +66,7 @@ Time:
 ### Docker Container로 실행하는 경우
 - 이미지 가져오기
 ```shell
-$ docker pull youngminan/prediction-sse-server
+$ docker pull youngminan/prediction-sse-server:0.0.3
 ```
 - (optional) nightly build
 ```shell
@@ -75,11 +75,11 @@ $ docker build -t {IMAGE TAG} .
 
 - run<br>
 ```shell
-$ docker run -d --network=host --restart=always -v {CONTEXT_CACHE_VOLUME}:/var/cache/context -e KAFKA_BOOTSTRAP_SERVER="{KAFKA_BROKER}" -e PREDICTION_RESULT_TOPIC={PREDICTION_RESULT_TOPIC_NAME}  youngminan/prediction-sse-server
+$ docker run -d --network=host --restart=always -v {CONTEXT_CACHE_VOLUME}:/var/cache/context -e KAFKA_BOOTSTRAP_SERVER="{KAFKA_BROKER}" -e PREDICTION_RESULT_TOPIC={PREDICTION_RESULT_TOPIC_NAME}  youngminan/prediction-sse-server:0.0.3
 ```
 
 
-### Python3.8 인터프리터로 실행하는 경우
+### Python3.10 인터프리터로 실행하는 경우
 ```shell
 ...  ...
 $ pip install -r requirements.txt
